@@ -48,6 +48,7 @@ script:
    # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/qt/5.13.0/bin/qmake ; make ; fi
 before_deploy:
    # - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/qt/5.13.0/bin/macdeployqt bin/${targetFile}.app -qmldir=/usr/local/Cellar/qt/5.13.0/qml -verbose=1 -dmg ; mv bin/${targetFile}.dmg bin/${releaseName} ; fi
+   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pwd; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mv bin/${targetFile} bin/${releaseName} ; fi
 deploy:              # 部署
   provider: releases 
