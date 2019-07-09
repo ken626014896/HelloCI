@@ -7,11 +7,11 @@ environment:
   matrix:
   - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     platform: x86
-    qt: 5.9
+    qt: 5.9.7
     releaseName: HelloCI_qt59_vs2015_x86
   - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     platform: x64
-    qt: 5.12
+    qt: 5.12.2
     releaseName: HelloCI_qt512_vs2017_x64
 before_build:
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" set msvc=msvc2015
