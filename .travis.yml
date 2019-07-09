@@ -58,12 +58,17 @@ before_deploy:
     - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/qt/5.13.0/bin/macdeployqt bin/${targetFile}.app -qmldir=/usr/local/Cellar/qt/5.13.0/qml -verbose=1 -dmg ; mv bin/${targetFile}.dmg bin/${releaseName} ; fi
     - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mv bin/${targetFile} bin/${releaseName} ; fi
 deploy:              # 部署
-  provider: releases # 部署到 GitHub Release，除此之外，Travis CI 还支持发布到 fir.im、AWS、Google App Engine 等
-  api_key: $GITHUB_OAUTH_TOKEN # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
-  file: bin/${releaseName}   # 部署文件路径
-  skip_cleanup: true     # 设置为 true 以跳过清理,不然 apk 文件就会被清理
+  provider: releases 
+  # 部署到 GitHub Release，除此之外，Travis CI 还支持发布到 fir.im、AWS、Google App Engine 等
+  api_key: $GITHUB_OAUTH_TOKEN 
+  # 填写 GitHub 的 token （Settings -> Personal access tokens -> Generate new token）
+  file: bin/${releaseName}   
+  # 部署文件路径
+  skip_cleanup: true     
+  # 设置为 true 以跳过清理,不然 apk 文件就会被清理
   on:     # 发布时机           
-    tags: true       # tags 设置为 true 表示只有在有 tag 的情况下才部署   
+    tags: true       
+    # tags 设置为 true 表示只有在有 tag 的情况下才部署   
 notifications:
     email: false
 
