@@ -31,7 +31,7 @@ build_script:
 after_build:
   - if "%APPVEYOR_REPO_TAG%"=="true" windeployqt C:\projects\helloci\release\HelloCI.exe --qmldir %QTDIR%\qml
 artifacts:
-  - path: C:\projects\helloci\release
+  - path: release
     name: $(releaseName)
 deploy:
   provider: GitHub
