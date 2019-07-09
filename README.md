@@ -11,4 +11,5 @@
 
 [lin-badge]: https://travis-ci.org/ken626014896/HelloCI.svg?branch=master "Travis build status"
 [lin-link]: https://travis-ci.org/ken626014896/HelloCI "Travis build status"
-
+[win-badge]: https://ci.appveyor.com/api/projects/status/lmjg94mg5yecqa8w?svg=true "AppVeyor build status"
+[win-link]: https://ci.appveyor.com/project/ken626014896/helloci "AppVeyor build status"
