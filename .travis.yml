@@ -57,7 +57,7 @@ script:
 before_deploy:
     - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then /usr/local/Cellar/qt/5.13.0/bin/macdeployqt bin/${targetFile}.app -qmldir=/usr/local/Cellar/qt/5.13.0/qml -verbose=1 -dmg ; mv bin/${targetFile}.dmg bin/${releaseName} ; fi
   
-    - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mv /home/travis/build/ken626014896/HelloCI/${targetFile} /home/travis/build/ken626014896/HelloCI/${releaseName} ; fi
+    #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mv /home/travis/build/ken626014896/HelloCI/${targetFile} /home/travis/build/ken626014896/HelloCI/${releaseName} ; fi
 deploy:              # 部署
   provider: releases 
   # 部署到 GitHub Release，除此之外，Travis CI 还支持发布到 fir.im、AWS、Google App Engine 等
